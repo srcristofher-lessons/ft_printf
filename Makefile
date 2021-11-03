@@ -4,7 +4,9 @@ SRC = ft_printf.c \
 	  ft_putchr.c \
 	  ft_putptr.c \
 	  ft_putnbr.c \
-	  ft_putdec.c
+	  ft_putdec.c \
+	  ft_putuns.c \
+	  ft_puthex.c
 CFLAGS = -Wall -Werror -Wextra
 OBJECTS = $(SRC:.c=.o)
 NAME = libftprintf.a

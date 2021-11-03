@@ -6,7 +6,7 @@
 /*   By: ajumbo <ajumbo@student.42madrid.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:49:17 by ajumbo            #+#    #+#             */
-/*   Updated: 2021/11/02 16:02:47 by ajumbo           ###   ########.fr       */
+/*   Updated: 2021/11/03 10:42:45 by ajumbo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	ft_putdec(int nbr)
 {
-	int	i;
+	int		i;
+	long	n;
 
 	i = 0;
-	if (nbr < 0)
+	n = (long)nbr;
+	if (n < 0)
+	{
 		i += write(1, "-", 1);
-	return (ft_putnbr((unsigned long long)nbr, 10, "0123456789") + i);
+		n *= -1;
+	}
+	return (ft_putnbr((unsigned long long)n, "0123456789") + i);
 }

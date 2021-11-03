@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajumbo <ajumbo@student.42madrid.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:13:53 by ajumbo            #+#    #+#             */
-/*   Updated: 2021/11/03 10:42:31 by ajumbo           ###   ########.fr       */
+/*   Created: 2021/11/03 09:56:22 by ajumbo            #+#    #+#             */
+/*   Updated: 2021/11/03 10:43:18 by ajumbo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(void *ptr)
+int	ft_puthex(unsigned int nbr, char c)
 {
-	unsigned long long	address;
-	int					i;
+	int	i;
 
-	address = (unsigned long long)ptr;
 	i = 0;
-	i += write(1, "0x", 2);
-	return (ft_putnbr(address, "0123456789abcdef") + i);
+	if (c == 'x')
+		i += ft_putnbr((unsigned long long)nbr, "0123456789abcdef");
+	else if (c == 'X')
+		i += ft_putnbr((unsigned long long)nbr, "0123456789ABCDEF");
+	return (i);
 }

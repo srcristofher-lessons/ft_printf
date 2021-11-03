@@ -6,17 +6,19 @@
 /*   By: ajumbo <ajumbo@student.42madrid.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:41:40 by ajumbo            #+#    #+#             */
-/*   Updated: 2021/11/02 15:35:28 by ajumbo           ###   ########.fr       */
+/*   Updated: 2021/11/03 10:41:41 by ajumbo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(unsigned long long nbr, unsigned int limit, char *base)
+int	ft_putnbr(unsigned long long nbr, char *base)
 {
 	int	i;
+	unsigned int limit;
 
 	i = 0;
+	limit = ft_strlen(base);
 	if (nbr >= limit)
 	{
 		i += ft_putnbr(nbr / limit, limit, base);
